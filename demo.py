@@ -321,4 +321,5 @@ if __name__ == '__main__':
             # cv2.imshow('test', im2show)
             # cv2.waitKey(0)
             result_path = os.path.join(args.result_dir, imglist[i][:-4] + "_det.jpg")
+            print(result_path)
             cv2.imwrite(result_path, im2show)

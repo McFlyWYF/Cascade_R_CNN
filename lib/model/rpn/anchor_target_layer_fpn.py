@@ -138,6 +138,8 @@ class _AnchorTargetLayer_FPN(nn.Module):
 
         if cfg.TRAIN.RPN_POSITIVE_WEIGHT < 0:
             num_examples = torch.sum(labels[i] >= 0)
+            #pytorch versions
+            num_examples = num_examples.type(torch.cuda.FloatTensor)
             positive_weights = 1.0 / num_examples
             negative_weights = 1.0 / num_examples
         else:
